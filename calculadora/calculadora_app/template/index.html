@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ingrese valores de xi y fi</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="xi">Valores de xi (separados por comas):</label><br>
+        <input type="text" id="xi" name="xi" required><br>
+        <label for="fi">Valores de fi (separados por comas):</label><br>
+        <input type="text" id="fi" name="fi" required><br><br>
+        <button type="submit" name="mandar-dato">Calcular</button>
+    </form>
+
+    <div>
+        <!--<p>{{dDivid}}</p>-->
+        <p>Polinomio sin simplificar</p>
+        <p>{{pol}}</p>
+        <p>Polinomio simplificado</p>
+        <p>{{pol_simpl}}</p>
+    </div>
+</body>
+</html>
