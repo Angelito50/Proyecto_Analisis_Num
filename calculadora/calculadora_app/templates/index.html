@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <title>Diferencias Divididas</title>
     <link rel="stylesheet" href="/style/diferencias.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="C:/Users/21517/Desktop/PROYECTO CALCULADORA/Proyecto_Analisis_Num/calculadora/calculadora_app/static/css/navbar.css">
+    <link rel="stylesheet" href="{% static '/css/diferencias.css'%}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 </head>
@@ -49,35 +50,40 @@
       </nav>
 
       <section class="Definicion-variables" id="Definicion-variables">
-        <h1 class="Tittle-metodo">Metodo de Diferencias Divididas</h1>
-        <p class="Pregunta-Puntos">Cuantos Puntos (x , y) tiene el problema?</p>
+        <form method="POST"> 
+            {% csrf_token %} 
+            <h1 class="Tittle-metodo">Metodo de Diferencias Divididas</h1>
+            <p class="Pregunta-Puntos">Cuantos Puntos (x , y) tiene el problema?</p>
 
-        <div class="inputBox espacio">
+        <div class="inputBox">
           <p>Escriba la cantidad de puntos de su ejercicio</p>
           <input type="text" id="cantidadPuntos" required="required" pattern="\d*">
           <span>Cantidad de Puntos</span>
-
-          <div class="inputPuntos">
-            <div class="inputBox">
-                <p>Escriba las variables Xi separadas por coma: ejemplo: 1,2,3,4</p>
-                <input type="text" id="variablesXi" required="required" pattern="\d*(,\d*)*">
-                <span>Variables Xi</span>
-            </div>
         
-            <div class="inputBox">
-                <p>Escriba las variables Yi separadas por coma: ejemplo: 1,2,3,4</p>
-                <input type="text" id="variablesYi" required="required" pattern="\d*(,\d*)*">
-                <span>Variables Yi</span>
-            </div>
+            <div class="inputPuntos">
+                <div class="inputBox">
+                    <p>Escriba las variables Xi separadas por coma: ejemplo: 1,2,3,4</p>
+                    <input type="text" name="xi_valores" id="variablesXi" required="required" pattern="\d*(,\d*)*">
+                    <span>Variables Xi</span>
+                </div>
+            
+                <div class="inputBox">
+                    <p>Escriba las variables Yi separadas por coma: ejemplo: 1,2,3,4</p>
+                    <input type="text" name="fi_valores" id="variablesYi" required="required" pattern="\d*(,\d*)*">
+                    <span>Variables Yi</span>
+                </div>
         </div>
-      </div>
-      
-      <button id="continuarBtn" >Continuar</button>
+        
+        <button name="ingresar_valores" id="continuarBtn" >Continuar</button>
+
+        <p> Resultado del polinomio : {{polinomio}} </p>
+        <p> Resultado del polinomio simplificado : {{simplificado}} </p>
+        </form>
       </section>
 
     
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="C:/Users/21517/Desktop/PROYECTO CALCULADORA/Proyecto_Analisis_Num/calculadora/calculadora_app/static/js/diferencias.js" defer type="module"></script>
+<script src="{% static '/js/diferencias.js' %}" defer type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
