@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form> 
+        {% csrf_token %}
+        <input type="text" name="xi_valores">
+        <input type="text" name="fi_valores">
+        <input type="submit" name="ingresar_valores" value="Enviar">
+    </form>
+    
+    <p>Valor de xi_ecuacion: {{ xi_ecuacion }}</p> 
+    <p>Valor de fi_ecuacion: {{ fi_ecuacion }}</p> 
+</body>
+</html>
