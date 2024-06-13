@@ -143,6 +143,9 @@ border: 2px solid #2484f1;
 
 
 
+.espacio{
+    margin-bottom: 20px;
+}
 /* Estilos para el div de respuesta */
 .respuesta {
     background-color: rgba(255, 255, 255, 0.9);
@@ -154,7 +157,7 @@ border: 2px solid #2484f1;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin-top: 30px; /* Añadido para mantener espacio entre el botón y el nuevo div */
+
 }
 
 /* Estilos para el span dentro del div de respuesta */
