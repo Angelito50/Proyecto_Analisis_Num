@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*************CSS DE LA SECCION D EBIENVENIDA*******************/
+
+.Bienvenida-secction {
+    background: url('C:/Users/21517/Desktop/PROYECTO CALCULADORA/Proyecto_Analisis_Num/calculadora/calculadora_app/static/imagenes/img/img-seccion-B/fondo1.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.Bienvenida-secction::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Bienvenida-secction .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.Bienvenida-secction h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.Bienvenida-secction h2 {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 20px 20px 40px;
+}
+
+/*CSS DE LOS BOTONES CON ANIMACION*/
+.Bienvenida-secction .seccion-btn {
+    display: flex;
+    gap: 50px;
+}
+
+.Bienvenida-secction .seccion-btn .btn {
+    position: relative;
+    background-color: #449bff;
+    color: #fff;
+    font-size: 20px; 
+    padding: 20px 50px; 
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none; 
+    cursor: pointer; 
+    z-index: 1;
+}
+
+.Bienvenida-secction .seccion-btn .btn-1 {
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.6s ease-in-out;
+}
+.Bienvenida-secction .seccion-btn .btn-2 {
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.6s ease-in-out;
+}
+
+
+.Bienvenida-secction .seccion-btn .btn-1::after {
+content: "";
+position: absolute;
+width: 10%;
+height: 100%;
+left: -10px;
+top: 0;
+transform:skew(20deg,0deg) ;
+background-color: #fff;
+transition: all 0.4s ease;
+}
+
+.Bienvenida-secction .seccion-btn .btn-2::after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    left: -10px;
+    top: 0;
+    transform:skew(20deg,0deg) ;
+    background-color: #fff;
+    transition: all 0.4s ease;
+}
+    
+.Bienvenida-secction .seccion-btn .btn-1::before {
+content: "";
+position: absolute;
+height: 100%;
+width: 100%;
+left: 0;
+top: 0;
+transform:skew(20deg,0deg) ;
+border:  3px solid #449bff;
+transition: all 0.4s ease;
+z-index: -1;
+}
+
+.Bienvenida-secction .seccion-btn .btn-2::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform:skew(20deg,0deg) ;
+    border:  3px solid #449bff;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.Bienvenida-secction .seccion-btn .btn-1:hover::after{
+    background-color: #ffffff31;
+    transform:skew(20deg,0deg) translateX(275px);
+} 
+
+.Bienvenida-secction .seccion-btn .btn-2:hover::after{
+    background-color:  #ffffff31;
+    transform:skew(20deg,0deg) translateX(180px);
+} 
+.Bienvenida-secction .seccion-btn .btn-1:hover::before{
+    background-color: #449bff;  
+    border: 3px solid #2484f1;
+    transform:skew(20deg,0deg) scale(1.1);
+} 
+.Bienvenida-secction .seccion-btn .btn-2:hover::before{
+    background-color: #449bff;  
+    border: 3px solid #2484f1;
+    transform:skew(20deg,0deg) scale(1.1);
+} 
