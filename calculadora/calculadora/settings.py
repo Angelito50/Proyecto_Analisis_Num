@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS=['C:/Users/Angel/Desktop/PROYECTO_ANS/calculadora/calculadora_app/static']
+
 
 # Application definition
 
