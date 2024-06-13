@@ -6,14 +6,13 @@
     <title>Calculadora</title>
 </head>
 <body>
-    <form> 
+    <form method="POST"> 
         {% csrf_token %}
         <input type="text" name="xi_valores">
         <input type="text" name="fi_valores">
         <input type="submit" name="ingresar_valores" value="Enviar">
     </form>
     
-    <p>Valor de xi_ecuacion: {{ xi_ecuacion }}</p> 
-    <p>Valor de fi_ecuacion: {{ fi_ecuacion }}</p> 
+   <p>Resultado: {{ resultado }} </p>
 </body>
 </html>
