@@ -1,0 +1,336 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+/*background: url('/img/fondo2.jpg');*/
+/*background:  url('/img/img-fondo-login/fondo8.jpeg');*/
+background: url('/C:/Users/21517/Desktop/PROYECTO CALCULADORA/Proyecto_Analisis_Num/calculadora/calculadora_app/static/imagenes/img/img-seccion-B/pexels-gabby-k-6238050.jpg');
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+padding: 0 20px;
+}
+
+
+.form-container{
+ 
+    display: flex;
+    width: 800px;
+    height: 550px;
+    border: 3px solid rgba(255,255,255, 0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+
+.col-1{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ width: 55%;
+ background-color: rgba(255, 255, 255, 0.813);
+ backdrop-filter: blurp(30px);
+ border-radius: 0 30% 20% 0;
+ border-top-right-radius: 30%;
+ transition: border-radius 0.3s;
+}
+
+/*IMAGENES CSSS*/
+.image-layer{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-image-main{
+    width: 600px;
+    animation: scale-up 3s ease-in-out alternate infinite;
+
+    position: relative;
+}
+
+.form-image{
+    position: absolute;
+
+}
+.calculadora {
+    width: 100px; 
+    position: absolute;
+    top: 40%;
+    left: 39%;
+    transform: rotate(10deg);
+    z-index: 1;
+}
+
+.funcion {
+    width: 40px;
+    top: 40%;
+    left: 25%;
+    z-index: 1;
+    transform: rotate(-20deg);
+}
+
+.raiz {
+    width: 40px;
+    top: 32%;
+    right: 30%;
+    z-index: 1;
+    transform: rotate(7deg);
+}
+
+.trigonometria {
+    width: 50px;
+    bottom: 35%;
+    left: 25%;
+    z-index: 1;
+    transform: rotate(7deg);
+}
+
+.triangulo {
+    width: 50px;
+    top: 58%;
+    left: 65%;
+    transform:rotate(10deg);
+    z-index: 1;
+}
+.cifras {
+    width: 30px;
+    top: 45%;
+    left: 67%;
+    transform:  rotate(-20deg);
+    z-index: 1;
+}
+/*ANIMACION DE IMAGENES*/
+.triangulo{
+    animation: scale-dow 3s ease-in-out alternate infinite;
+}
+.funcion{
+    animation: scale-dow 3s ease-in-out alternate infinite;
+}
+
+.raiz{
+    animation: scale-up 3s ease-in-out alternate infinite;
+}
+.calculadora{
+    animation: up-dow 3s ease-in-out alternate infinite;
+}
+
+.trigonometria{
+    animation: left-right 3s ease-in-out alternate infinite;
+}
+.cifras{
+    animation: scale-dow 3s ease-in-out alternate infinite;
+}
+@keyframes left-right{
+to{
+    transform: translateX(10px);
+}
+}
+@keyframes up-dow{
+    to{
+        transform: translatey(2px);
+    }
+}
+@keyframes scale-dow{
+    to{
+        transform: scale(0.95);
+    }
+}
+@keyframes scale-up{
+    to{
+        transform: scale(1.05);
+    }
+}
+
+
+
+.featured-words{
+    text-align: center;
+    color: #2484f1;
+    width: 300px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.featured-words span{
+    font-weight: 600;
+    color: #212121;
+}
+
+.col-2{
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.btn-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn{
+    font-weight: 500;
+    padding: 5px 30px;
+    border: none;
+    color: #000;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.813);
+    box-shadow: 0 5px 10px rgba(255,255,255, 0.2);
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+.btn-1{
+    color: #fff;
+    background-color: #449bff;
+}
+.btn:hover{
+    opacity: 0.85;
+}
+
+/*******************LOGIN CSS************/
+.login-form{
+    position: absolute;
+    left: 50%;
+    transform:  translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+}
+/******************REGISTER CSS**************************/
+.register-form{
+    position: absolute;
+    left: -50%;
+    transform:  translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 4vw;
+    transition: .3s;
+}
+.register-form .form-tittle{
+    margin-block: 40px 20px;
+}
+
+.form-tittle{
+    margin: 40px 0;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.form-inputs{
+    width: 100%;
+}
+
+.input-box{
+    position: relative;
+}
+
+.input-field{
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: #000;
+    background: rgba(255, 255, 255, 0.813);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(255,255,255, 0.4);
+}
+
+::placeholder{
+    color: #000;
+    font-size: 15px;
+}
+.input-box .icon{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #449bff;
+}
+
+.forgot-pass{
+display: flex;
+justify-content: right;
+gap: 5px;
+}
+
+.forgot-pass a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-pass a:hover{
+    text-decoration: underline;
+    color: #2484f1;
+}
+
+.input-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    margin: 10px 0;
+    color: #fff;
+    background-color: #2484f1;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255, 0.2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit:hover{
+    gap: 15px;
+}
+
+
+/*RESPONSIVE**********/
+
+@media (max-width:892px){
+.form-container{
+    width: 400px;
+}
+.col-1{
+    display: none;
+}
+.col-2{
+    width: 100%;
+}
+
+
+}
