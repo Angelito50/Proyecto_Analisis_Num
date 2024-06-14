@@ -75,6 +75,7 @@ def Dif_Divididas(request):
         polisimple = polinomio.expand()
 
         # polinomio para evaluacion numérica
+
         px = sp.lambdify(x,polisimple)
 
         # Puntos para la gráfica
@@ -101,6 +102,7 @@ def Dif_Divididas(request):
 
     return render(request, 'index.html', {'polinomio':pol_nomio, 'simplificado':polinomio_simplificado
                                           , 'tabla':tabla_final, 'titulos':title})
+
 
 def funcion(x, y, ecuacion):
     expr = sp.sympify(ecuacion)
