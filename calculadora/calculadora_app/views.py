@@ -109,7 +109,6 @@ def funcion(x, y, ecuacion):
     return expr.subs({sp.symbols('x'): x, sp.symbols('y'): y})
 
 def Euler_Method(request):
-    
     resultados = []
     if request.method == 'POST':
         h = float(request.POST.get('h'))
