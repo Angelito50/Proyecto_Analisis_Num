@@ -87,6 +87,7 @@ def Dif_Divididas(request):
 
         #Salida de las ecuaciones
         tabla_final = tabla.tolist()
+        print(tabla_final)
         
         pol_nomio = polinomio
         
