@@ -99,10 +99,14 @@ document.getElementById('continuarBtn').addEventListener('click', function() {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const continuarBtn = document.getElementById('continuarBtn');
+  const spanRespuesta = document.getElementById('spanRespuesta');
 
-  continuarBtn.addEventListener('click', () => {
+  continuarBtn.addEventListener('click', (event) => {
+      event.preventDefault(); // Evitar que el formulario se envíe
+
       // Obtener los valores de los inputs
       const cantidadPuntos = document.getElementById('cantidadPuntos').value;
       const variablesXi = document.getElementById('variablesXi').value;
@@ -118,20 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
       }
 
-      // Crear el nuevo div con el span
-      const respuestaDiv = document.createElement('div');
-      const respuestaSpan = document.createElement('span');
-
-      respuestaSpan.innerText = `La respuesta a tu ejercicio con el método de diferencias divididas con ${cantidadPuntos} puntos y los valores Xi: ${variablesXi} y Yi: ${variablesYi}`;
-      respuestaDiv.appendChild(respuestaSpan);
-
-      // Establecer una clase al div para poder darle estilo
-      respuestaDiv.className = 'respuesta';
-
-      // Seleccionar el contenedor de section
-      const contenedor = document.getElementById('Definicion-variables');
-
-      // Añadir el nuevo div al contenedor específico después del botón
-      contenedor.appendChild(respuestaDiv);
+      // Actualizar el contenido del span
+      spanRespuesta.innerText = `La respuesta a tu ejercicio con el método de diferencias divididas con ${cantidadPuntos} puntos y los valores Xi: ${variablesXi} y Yi: ${variablesYi}`;
   });
 });

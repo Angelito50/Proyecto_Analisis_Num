@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATICFILES_DIRS=['C:/Users/Angel/Desktop/PROYECTO_ANS/calculadora/calculadora_app/static']
+STATICFILES_DIRS=['C:/Users/21517/Desktop/PROYECTO CALCULADORA/Proyecto_Analisis_Num/calculadora/calculadora_app/static']
 #STATICFILES_DIRS=['C:/Users/Angel/Desktop/PROYECTO_ANS/calculadora/calculadora_app/static']
 
 
