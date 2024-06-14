@@ -7,7 +7,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+html, body {
+    overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
+}
 
 
 /*INPUT CSS*/
@@ -27,27 +29,30 @@ input {
 
 /* Centered InputBoxP */
 .inputBoxP {
-    text-align: center;
     position: relative;
-    flex: 1;
-    min-width: 0;
+    text-align: center; 
     margin-bottom: 20px;
 }
 
 .inputBoxP input {
-    width: 60%;
+    width: 60%; 
+    margin: 0 auto; 
 }
 
 .inputBoxP span {
     position: absolute;
-    padding: 10px;
+    left: calc(20% + 10px); 
+    transform: translateX(-5%);
+    padding: 10px 10px;
     pointer-events: none;
     font-size: 1em;
-    color:#666777 ;
+    color: #666777;
     text-transform: uppercase;
     transition: 0.5s;
-    left:180px;
+
 }
+
+
 /* Regular InputBox */
 .inputBox {
     position: relative;
