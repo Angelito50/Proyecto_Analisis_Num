@@ -11,14 +11,9 @@
 
 
 /*INPUT CSS*/
-.inputBox{
-    position: relative;
-    flex: 1; 
-    min-width: 0; 
-    text-align: left;
   
-}
-.inputBox input{
+/* General Input Styles */
+input {
     width: 100%;
     padding: 10px;
     border: 2px solid #3572EF;
@@ -27,10 +22,43 @@
     outline: none;
     color: #000;
     font-size: 1em;
-    transition: 0.5s ;
+    transition: 0.5s;
 }
 
-.inputBox span{
+/* Centered InputBoxP */
+.inputBoxP {
+    text-align: center;
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 20px;
+}
+
+.inputBoxP input {
+    width: 60%;
+}
+
+.inputBoxP span {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color:#666777 ;
+    text-transform: uppercase;
+    transition: 0.5s;
+    left:180px;
+}
+/* Regular InputBox */
+.inputBox {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+.inputBox  span{
     position: absolute;
     left: 0;
     padding: 10px;
@@ -41,14 +69,14 @@
     transition: 0.5s;
 }
 
-.Definicion-variables .inputPuntos {
+.inputPuntos {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
     width: 100%;
-    max-width: 600px; 
-    margin: 0 auto; 
+    max-width: 600px;
+    margin: 0 auto;
     padding-left: 10px;
     margin-top: 35px;
     margin-bottom: 0;
@@ -58,6 +86,7 @@
     text-align: left; 
 }
 
+
 .inputPuntos p {
     color: #000;
     font-size: 0.8em;
@@ -66,7 +95,8 @@
 }
 
 
-
+.inputBoxP input:valid ~ span,
+.inputBoxP input:focus ~ span,
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span{
     color: #fff;
@@ -79,13 +109,18 @@
     letter-spacing: 0.2em;
     border-radius: 3px;
 }
-.inputBox:nth-child(2) input:valid ~ span,
-.inputBox:nth-child(2) input:focus ~ span{
+
+.inputBoxP:nth-child(3) input:valid ~ span,
+.inputBoxP:nth-child(3) input:focus ~ span,
+.inputBox:nth-child(3) input:valid ~ span,
+.inputBox:nth-child(3) input:focus ~ span{
 background: #3572EF;
 color: #000;
 border-radius: 2px;
 }
 
+.inputBoxP input:valid,
+.inputBoxP input:focus,
 .inputBox input:valid,
 .inputBox input:focus{
 border: 2px solid #2484f1;
@@ -133,6 +168,7 @@ border: 2px solid #2484f1;
     cursor: pointer;
     transition: .2s;
     margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .Definicion-variables button:hover{
@@ -146,25 +182,27 @@ border: 2px solid #2484f1;
 .espacio{
     margin-bottom: 20px;
 }
+
 /* Estilos para el div de respuesta */
-.respuesta {
+ .respuestas {
     background-color: rgba(255, 255, 255, 0.9);
     border: 2px solid #2484f1;
     border-radius: 10px;
     width: 60%;
     max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
+    margin-top: 10px;
+    margin-left: 50px !important; padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 
 }
 
 /* Estilos para el span dentro del div de respuesta */
-.respuesta span {
+.respuestaSpan{
     background-color: #3572EF;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
+    margin-bottom: 15px;
 }
