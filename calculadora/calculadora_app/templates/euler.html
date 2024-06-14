@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Valores</title>
+</head>
+<body>
+    <h1>Calcular Valores</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="h">Tamaño de paso:</label>
+        <input type="text" id="h" name="h" required><br><br>
+        <label for="s">¿Hasta qué valor?</label>
+        <input type="text" id="s" name="s" required><br><br>
+        <label for="ecuacion">Ecuación (en términos de x y y):</label>
+        <input type="text" id="ecuacion" name="ecuacion" required><br><br>
+        <button type="submit">Calcular</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Recorrido</th>
+                    <th>x</th>
+                    <th>y</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x, y in resultados %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ x }}</td>
+                        <td>{{ y }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

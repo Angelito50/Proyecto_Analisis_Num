@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from calculadora_app.views import Procedimiento
+from calculadora_app.views import Dif_Divididas, Euler_Method
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('proceso/', Procedimiento)
+    path('divid/', Dif_Divididas),
+    path('euler/', Euler_Method)
 ]

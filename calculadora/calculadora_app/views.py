@@ -1,13 +1,20 @@
 from django.shortcuts import render
 import numpy as np
-import sympy as sym
+import sympy as sp
 import matplotlib.pyplot as plt
+from .models import *
 from django.http import HttpResponse
+import math
 
-def Procedimiento(request):
+def Dif_Divididas(request):
     pol_nomio= ''
     polinomio_simplificado = ''
+    tabla_final = []
+    title = ''
     
+    #Importante
+    objeto = tbl_Ecuaciones()
+
     if request.method == 'POST':
         xi_str_inp = request.POST.get('xi_valores','')
         fi_str_inp = request.POST.get('fi_valores','')
@@ -15,6 +22,7 @@ def Procedimiento(request):
         # INGRESO , Datos de prueba
         xi = [float(x.strip()) for x in xi_str_inp.replace(' ', '').split(',') if x.strip()]
         fi = [float(x.strip()) for x in fi_str_inp.replace(' ', '').split(',') if x.strip()]
+        
 
         # PROCEDIMIENTO
 
@@ -54,7 +62,7 @@ def Procedimiento(request):
         n = len(dfinita)
 
         # expresión del polinomio con Sympy
-        x = sym.Symbol('x')
+        x = sp.Symbol('x')
         polinomio = fi[0]
         for j in range(1,n,1):
             factor = dDividida[j-1]
@@ -67,7 +75,7 @@ def Procedimiento(request):
         polisimple = polinomio.expand()
 
         # polinomio para evaluacion numérica
-        px = sym.lambdify(x,polisimple)
+        px = sp.lambdify(x,polisimple)
 
         # Puntos para la gráfica
         muestras = 101
@@ -77,11 +85,45 @@ def Procedimiento(request):
         pfi = px(pxi)
 
         #Salida de las ecuaciones
-        
+        tabla_final = tabla.tolist()
         
         pol_nomio = polinomio
         
+        title = titulo
         
         polinomio_simplificado = polisimple
+        
+        #Guardar en la DataBase
+        objeto.xi_ecuacion = xi
+        objeto.fi_ecuacion = fi
+        objeto.ecuacion = polinomio
+        objeto.ecuacion_simplificada = polisimple
 
-    return render(request, 'index.html', {'polinomio':pol_nomio, 'simplificado':polinomio_simplificado})
+    return render(request, 'index.html', {'polinomio':pol_nomio, 'simplificado':polinomio_simplificado
+                                          , 'tabla':tabla_final, 'titulos':title})
+
+def funcion(x, y, ecuacion):
+    expr = sp.sympify(ecuacion)
+    return expr.subs({sp.symbols('x'): x, sp.symbols('y'): y})
+
+def Euler_Method(request):
+    
+    resultados = []
+    if request.method == 'POST':
+        h = float(request.POST.get('h'))
+        s = float(request.POST.get('s'))
+        ecuacion = request.POST.get('ecuacion')
+
+        x, y = sp.symbols('x y')
+
+        n = int((s / h) + 1)
+        x_vals = np.zeros(n)
+        y_vals = np.zeros(n)
+       
+
+        for i in range(1, n):
+            y_vals[i] = y_vals[i - 1] + funcion(x_vals[i - 1], y_vals[i - 1], ecuacion) * h
+            x_vals[i] = x_vals[i - 1] + h
+            resultados.append((x_vals[i], y_vals[i]))
+        
+    return render(request, 'euler.html', {'resultados':resultados})

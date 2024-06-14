@@ -78,10 +78,30 @@
 
         <p> Resultado del polinomio : {{polinomio}} </p>
         <p> Resultado del polinomio simplificado : {{simplificado}} </p>
-        </form>
+        
+        <!--Esta seria la parte donde se tendria que mostrar la tabla-->
+        <h2>Tabla de Diferencias Divididas</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    {% for titulo in titulos %}
+                      <th>{{ titulo }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for fila in tabla_final %}
+                <tr>
+                    {% for celda in fila %}
+                      <td>{{ celda }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      
+      </form>
       </section>
-
-    
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{% static '/js/diferencias.js' %}" defer type="module"></script>

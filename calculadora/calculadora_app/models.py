@@ -14,6 +14,7 @@ class tbl_Historial(models.Model):
 class tbl_Ecuaciones(models.Model):
     id_ecuacion = models.AutoField(primary_key=True) 
     ecuacion = models.CharField(max_length=200)
+    ecuacion_simplificada = models.CharField(max_length=200, null=True)
     id_usuario = models.ForeignKey(tbl_usuarios, on_delete=models.RESTRICT)
     xi_ecuacion = models.CharField(max_length=200, null=True)
     fi_ecuacion = models.CharField(max_length=200, null=True)
