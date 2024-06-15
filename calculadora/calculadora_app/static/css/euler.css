@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inputBox {
+    position: relative;
+    flex: 1; 
+    min-width: 0; 
+    text-align: left;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #3572EF;
+    background: rgba(255, 255, 255, 0.813);
+    border-radius: 5px;
+    outline: none;
+    color: #000;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #666777;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.inputFila {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px; 
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.Definicion-variables .Tittle-metodo {
+    color: #fff;
+    font-size: 3.5rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.3);
+    padding-top: 100px;
+}
+
+.Definicion-variables .Pregunta-Puntos {
+    color: #fff;
+    font-size: 2.0rem;
+    font-weight: 400;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.3);
+}
+
+.Definicion-variables {
+    min-height: 100vh;
+    width: 100vw;
+    background: #f5f5f5;
+    background: linear-gradient(to bottom, #2484f1, #f3efec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.Definicion-variables button {
+    font-weight: 500;
+    padding: 5px 30px;
+    border: none;
+    color: #000;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.813);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: .2s;
+    margin-bottom: 50px;
+}
+
+.Definicion-variables button:hover {
+    opacity: 0.85;
+    letter-spacing: .1rem;
+    border: 2px solid #2484f1;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #fff;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background-color: #449bff;
+    border-left: 1px solid #2484f1;
+    border-right: 1px solid #2484f1;
+    letter-spacing: 0.2em;
+    border-radius: 3px;
+}
+.inputBox:nth-child(5) input:valid ~ span,
+.inputBox:nth-child(5) input:focus ~ span {
+    background: #3572EF;
+    color: #000;
+    border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 2px solid #2484f1;
+}
+
+form {
+    width: 100%;
+}
+
+.inputBox p {
+    color: #000;
+    font-size: 0.8em;
+    margin-bottom: 5px; 
+    text-align: left; 
+}
+
+
+
+
+
+
+/* Estilos para el div de respuesta */
+.respuestas {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #2484f1;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 500px;
+    margin: 20px auto; 
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Estilos para el span dentro del div de respuesta */
+.respuestaSpan {
+    background-color: #3572EF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
