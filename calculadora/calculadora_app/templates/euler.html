@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link x-lg-2 " aria-current="page" href="/Proyecto_Analisis_Num/calculadora/calculadora_app/templates/inicio.html">Inicio</a>
+                  <a class="nav-link x-lg-2 " aria-current="page" href="/calculadora/calculadora_app/templates/inicio.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link mx-lg-2" href="#">Teoria</a>
@@ -55,33 +56,29 @@
         <p class="Pregunta-Puntos">Introduzca los datos necesarios para el problema:</p>
         <form method="post">
           {% csrf_token %}
-            <div class="inputFila">
-                <div class="inputBox">
-                    <p>Escriba la ecuacion en terminos de 'x' y 'y' :</p>
-                    <input type="text" id="ecuacion" name="ecuacion" required="required">
-                    <span>(ejemplo: -2*x*y)</span>
-                </div>
-
-            <div class="inputFila">
-                <div class="inputBox">
-                    <p>Escriba el tamaño del paso (h):</p>
-                    <input type="text" id="h" name="h" required="required">
-                    <span>Tamaño del paso (h)</span>
-                </div>
-                <div class="inputBox">
-                    <p>Escriba hasta que valor el número de pasos:</p>
-                    <input type="text" id="numPasos" required="required">
-                    <span>Número de pasos</span>
-                </div>
+          <div class="inputFila">
+            <div class="inputBox">
+                <p>Escriba la ecuacion en terminos de 'x' y 'y' :</p>
+                <input type="text" id="ecuacion" name="ecuacion" required="required">
+                <span>(ejemplo: -2*x*y)</span>
             </div>
-            <button id="continuarBtn" class="mt-4">Continuar</button>
-
-
-            <div class="respuestas">
-              <span id="spanRespuesta" class="respuestaSpan"></span>
-              <p>Resultado de la función : <span id="resultadoFuncion"></span></p>
-              <p>Ejemplo de texto de respuesta por el momento : <span id="textoEjemplo"></span></p>
-          </div>
+            <div class="inputBox">
+                <p>Escriba el numero del tamaño del paso (h):</p>
+                <input type="text" id="h" name="h" required="required">
+                <span>Tamaño del paso (h)</span>
+            </div>
+            <div class="inputBox">
+                <p>Escriba hasta que valor el número de pasos:</p>
+                <input type="text" id="numPasos" required="required">
+                <span>Número de pasos</span>
+            </div>
+        </div>
+        <button id="continuarBtn" class="mt-4">Continuar</button>
+        <div class="respuestas">
+            <span id="spanRespuesta" class="respuestaSpan"></span>
+            <p>Resultado de la función: <span id="resultadoFuncion"></span></p>
+            <p>Ejemplo de texto de respuesta por el momento: <span id="ejemploTexto"></span></p>
+        </div>
 
           <table>
             <thead>
