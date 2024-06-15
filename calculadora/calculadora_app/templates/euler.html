@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,14 +71,14 @@
                 </div>
                 <div class="inputBox">
                     <p>Escriba hasta que valor el número de pasos:</p>
-                    <input type="text" id="numPasos" required="required">
+                    <input type="text" id="numPasos" name="s" required="required">
                     <span>Número de pasos</span>
                 </div>
             </div>
             <button id="continuarBtn" class="mt-4">Continuar</button>
 
 
-            <div class="respuestas">
+          <div class="respuestas">
               <span id="spanRespuesta" class="respuestaSpan"></span>
               <p>Resultado de la función : <span id="resultadoFuncion"></span></p>
               <p>Ejemplo de texto de respuesta por el momento : <span id="textoEjemplo"></span></p>

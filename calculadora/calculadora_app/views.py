@@ -16,8 +16,8 @@ def Dif_Divididas(request):
     objeto = tbl_Ecuaciones()
 
     if request.method == 'POST':
-        xi_str_inp = request.POST.get('xi_valores','')
-        fi_str_inp = request.POST.get('fi_valores','')
+        xi_str_inp = request.POST.get('xi_valores',' ')
+        fi_str_inp = request.POST.get('fi_valores',' ')
 
         # INGRESO , Datos de prueba
         xi = [float(x.strip()) for x in xi_str_inp.replace(' ', '').split(',') if x.strip()]
@@ -100,9 +100,9 @@ def Dif_Divididas(request):
         objeto.fi_ecuacion = fi
         objeto.ecuacion = polinomio
         objeto.ecuacion_simplificada = polisimple
+        objeto.save()
 
-    return render(request, 'index.html', {'polinomio':pol_nomio, 'simplificado':polinomio_simplificado
-                                          , 'tabla':tabla_final, 'titulos':title})
+    return render(request, 'index.html', {'polinomio':pol_nomio, 'simplificado':polinomio_simplificado, 'tabla':tabla_final, 'titulos':title})
 
 
 def funcion(x, y, ecuacion):
